@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<testsuite errors="1" failures="0" name="TestStringMethods-20210420145808" tests="3" time="0.002">
+	<testcase classname="TestStringMethods" name="test_isupper" time="0.000"/>
+	<testcase classname="TestStringMethods" name="test_split" time="0.000"/>
+	<testcase classname="TestStringMethods" name="test_upper" time="0.002">
+		<error message="'FOO' != 'foo'
+- FOO
++ foo
+" type="AssertionError">
+<![CDATA[Traceback (most recent call last):
+  File "C:\Users\nadzeya_balyshava\Desktop\cicd\tests_junit.py", line 16, in test_upper
+    self.assertEqual('foo'.upper(), 'foo')
+AssertionError: 'FOO' != 'foo'
+- FOO
++ foo
+
+]]>		</error>
+	</testcase>
+	<system-out>
+<![CDATA[]]>	</system-out>
+	<system-err>
+<![CDATA[]]>	</system-err>
+</testsuite>
