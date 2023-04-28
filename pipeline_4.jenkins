@@ -3,7 +3,7 @@ pipeline {
 
    stages {
 
-      stage('runpy') {
+      stage('run') {
         steps{      
           sh 'python tests.py'
         }
