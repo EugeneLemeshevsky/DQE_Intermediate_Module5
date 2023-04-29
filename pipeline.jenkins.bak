@@ -7,9 +7,9 @@ stages {
 		sh 'apt-get install -y python3-venv'
 		sh 'python3 -m venv venv'
 		sh '. venv/bin/activate'
-		sh 'pip install -r Requirements.txt'
 		sh 'python -m pip install pytest'
 		sh 'pip install pytest-html'
+		sh 'pip install pymssql'
   }
 }
     stage ('Test'){
