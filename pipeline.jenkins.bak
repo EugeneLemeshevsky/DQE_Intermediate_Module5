@@ -20,6 +20,8 @@ stages {
     }
 	stage ('Push'){
         steps {
+			sh '''git config --global user.email "elemeshevsky@gmail.com"'''
+			sh '''git config --global user.name "EugeneLemeshevsky"'''
             sh 'git add .'
 			sh '''git commit -m "Message"'''
 			sh 'git push'
