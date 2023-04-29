@@ -15,6 +15,14 @@ stages {
     stage ('Test'){
         steps {
             sh 'pytest test_DB_Pytest.py'
+			sh 'py.test --html=demoreport.html'
+        }
+    }
+	stage ('Push'){
+        steps {
+            sh 'git add .'
+			sh '''git commit -m "Message"'''
+			sh 'git push'
         }
     }
 }
