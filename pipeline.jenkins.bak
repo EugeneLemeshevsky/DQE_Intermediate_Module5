@@ -45,7 +45,7 @@ stages {
 }
     stage ('Test'){
         steps {
-            sh 'python3 test_DB_Pytest.py'
+            sh 'pytest test_DB_Pytest.py'
         }
     }
 }
