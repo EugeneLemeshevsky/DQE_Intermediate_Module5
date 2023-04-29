@@ -4,6 +4,7 @@ stages {
     
     stage('build') {
   steps {
+		sh 'apt-get install -y python3-venv'
 		sh 'python3 -m venv venv'
 		sh """.\\venv\\Scripts\\activate"""
 		sh 'pip install -r Requirements.txt'
