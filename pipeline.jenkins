@@ -4,7 +4,7 @@ stages {
     stage ('GIT Checkout'){
         steps {
             git(
-                    url: "https://github.com/EugeneLemeshevsky/DQE_Intermediate_Module5",
+                    url: "https://github.com/EugeneLemeshevsky/DQE_Intermediate_Module5.git",
                     changelog: false,
                     poll: false
                 )
@@ -15,6 +15,7 @@ stages {
   steps {
 		sh 'python3 -m venv venv'
 		sh """.\\venv\\Scripts\\activate"""
+		sh 'pip install -r Requirements.txt'
 		sh 'python -m pip install pytest'
 		sh 'pip install pytest-html'
   }
