@@ -14,7 +14,7 @@ stages {
     stage('build') {
   steps {
 		sh 'python3 -m venv venv'
-		sh """.\venv\Scripts\activate"""
+		sh """.\\venv\\Scripts\\activate"""
 		sh 'python -m pip install pytest'
 		sh 'pip install pytest-html'
   }
