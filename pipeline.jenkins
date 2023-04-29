@@ -3,11 +3,7 @@ agent any
 stages {
     stage ('GIT Checkout'){
         steps {
-            git(
-                    url: "https://github.com/EugeneLemeshevsky/DQE_Intermediate_Module5.git",
-                    changelog: false,
-                    poll: false
-                )
+		git changelog: false, poll: false, url: 'https://github.com/EugeneLemeshevsky/DQE_Intermediate_Module5.git'
         }
     }
     
