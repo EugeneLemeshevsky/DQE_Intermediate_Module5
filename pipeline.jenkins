@@ -1,0 +1,52 @@
+pipeline {
+    agent any
+    stages {
+        stage("Clone Git Repository") {
+            steps {
+                git(
+                    url: "https://github.com/EugeneLemeshevsky/DQE_Intermediate_Module5",
+                    changelog: false,
+                    poll: false
+                )
+            }
+        }
+	stage('build') {
+		steps {
+		sh 'python3 -m venv venv'
+		sh '.\venv\Scripts\activate'
+		sh 'python -m pip install pytest'
+		sh 'pip install pytest-html'
+  }
+}
+
+    }
+}
+
+pipeline {
+agent any
+stages {
+    stage ('GIT Checkout'){
+        steps {
+            git(
+                    url: "https://github.com/EugeneLemeshevsky/DQE_Intermediate_Module5",
+                    changelog: false,
+                    poll: false
+                )
+        }
+    }
+    
+    stage('build') {
+  steps {
+		sh 'python3 -m venv venv'
+		sh '.\venv\Scripts\activate'
+		sh 'python -m pip install pytest'
+		sh 'pip install pytest-html'
+  }
+}
+    stage ('Test'){
+        steps {
+            sh 'pytest test_DB_Pytest.py'
+        }
+    }
+}
+}
