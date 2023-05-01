@@ -24,7 +24,7 @@ stages {
 			sh '''git config --global user.name "EugeneLemeshevsky"'''
             sh 'git add .'
 			sh '''git commit -m "Message"'''
-			sh 'git push origin HEAD:main'
+			sh 'git push -u -f origin HEAD:main'
         }
     }
 }
