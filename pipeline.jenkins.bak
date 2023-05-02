@@ -21,12 +21,10 @@ stages {
 	stage ('Push'){
         steps {
 			sh '''git config --global user.email "elemeshevsky@gmail.com"'''
-			sh '''git config --global user.name "EugeneLemeshevsky"'''
+			sh 'git config --global user.name EugeneLemeshevsky'
             sh 'git add .'
 			sh '''git commit -m "Message"'''
-			sh 'git remote rm origin'
-			sh "git remote add origin 'git@github.com:EugeneLemeshevsky/DQE_Intermediate_Module5.git'"
-			sh 'git push origin HEAD:main'
+			sh 'git push'
         }
     }
 }
